@@ -1,0 +1,11 @@
+#version 410
+in vec4 vColour;
+out vec4 fragColor;
+void main()
+{
+    // hardcode a light direction
+    vec4 light = vec4(0.5,0.7,0.5,0);
+    // get the intensity
+    float intensity = clamp(dot(light, vColour), 0, 1);
+    fragColor = vec4(intensity, intensity, intensity, 1);
+}
